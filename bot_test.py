@@ -12,9 +12,17 @@ bot = telegram.Bot(token=TOKEN)
 #         print(update.message.photo[-1].get_file())
 #     i += 1
 
-upd = bot.get_updates()[-1].to_dict()
-user_id = upd.get('message').get('from').get('id')
-first_name = upd.get('message').get('from').get('first_name')
-last_name = upd.get('message').get('from').get('last_name')
-msg = upd.get('message').get('text')
-print(msg)
+update = bot.get_updates()[-1]
+# user_id = upd.get('message').get('from').get('id')
+# first_name = upd.get('message').get('from').get('first_name')
+# last_name = upd.get('message').get('from').get('last_name')
+# msg = upd.get('message').get('text')
+# print(upd)
+
+location_keyboard = telegram.KeyboardButton(text="send_location", request_location=True)
+contact_keyboard = telegram.KeyboardButton(text="send_contact", request_contact=True)
+custom_keyboard = [[ location_keyboard, contact_keyboard ]]
+reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+bot.send_message(chat_id=update.message.chat_id, 
+                 text="Would you mind sharing your location and contact with me?", 
+                 reply_markup=reply_markup)

@@ -7,7 +7,32 @@ import pyrebase
 import os
 import requests
 
+class Users:
+    user_dict = {}
+    def __init__(self, user_id):
+        self.user_dict['user_id'] = user_id
+
+    def add_name(self, name):
+        self.user_dict['name'] = user_id
+    
+    def add_latlng(self, latlng):
+        self.user_dict['latlng'] = latlng
+    
+    def add_file_info(self, file_info):
+        self.user_dict['file_info'] = file_info
+
+    def add_contact(self, phone_no):
+        self.user_dict['contact'] = phone_no
+
+    def add_description(self, desc):
+        self.user_dict['desc'] = desc
+        
+    def get_user_id(self):
+        return self.user_dict['user_id']
+
+
 content = {}
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -21,6 +46,7 @@ def error(bot, update, error):
 
 
 def get_info(update):
+    
     upd = copy.deepcopy(update.to_dict())
     # print(update)
     user_id = update.message.from_user.id
@@ -32,6 +58,7 @@ def get_info(update):
         content['name'] = first_name
     else:
         content['name'] = first_name + " " + last_name
+
     msg = update.message.text
     # print(msg)
     if upd.get('message').get('location') is not None:
@@ -44,6 +71,7 @@ def get_info(update):
     if update.message.photo != []:
         # print(update.message.photo[-1].get_file()['file_path'])
         content['file_info'] = update.message.photo[-1].get_file()['file_path']
+
 
 
 def echo(bot, update):
@@ -99,7 +127,8 @@ def add_database(data):
 def description(bot, update):
     desc = update.to_dict().get('message').get('text')
     content['description'] = desc
-    bot.send_message(chat_id=update.message.chat_id, text="Thank you! Your complain has been recorded! :)")
+    bot.send_message(chat_id=update.message.chat_id, text="Thank you! Your complaint has been recorded! :)")
+
     print(content)
 
     add_database(content)
@@ -131,3 +160,4 @@ def main():
 if __name__ == '__main__':
     main()
     content = {}
+

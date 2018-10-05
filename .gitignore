@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/vim,macos,python,intellij,intellij+all,visualstudio,intellij+iml,visualstudiocode
 
 ### Intellij ###
@@ -692,3 +691,4 @@ ASALocalRun/
 
 
 # End of https://www.gitignore.io/api/vim,macos,python,intellij,intellij+all,visualstudio,intellij+iml,visualstudiocode
+api_key/

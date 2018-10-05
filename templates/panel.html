@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<title>Panel</title>
+		<style>
+		/* Set the size of the div element that contains the map */
+		#map {
+		height: 400px;  /* The height is 400 pixels */
+		width: 100%;  /* The width is the width of the web page */
+		}
+		</style>
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+			<div class="container">
+				<a class="navbar-brand" href="#">Anton</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-5">
+					<img src="./img/img.png" class="w-100">
+				</div>
+				<div class="col-7">
+					<div class="row">
+						<div class="col-9">
+							<div class="h2 mb-3">Lorem ipsum dolor sit amet</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sequi deserunt quia, magnam modi rerum minus harum libero nisi soluta accusamus, velit doloremque eligendi</p>
+							<div class="d-flex align-items-end mb-auto">
+								<button class="btn btn-primary ">Upvote</button>
+							</div>
+						</div>
+						<div class="col-3">
+							<img src="./img/images.jpeg" width="60" class="rounded-circle mb-2">
+							<p >Name of Person</p>
+							<p >Location</p>
+							<p >Date</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="h2">Comments</div>
+			<div class="d-flex flex-row align-items-center">
+				<div>
+					<img src="./img/images.jpeg" width="40" class="rounded-circle mb-2">
+				</div>
+				<div class="h5 ml-3">Name</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde molestias fugit voluptas, minima, fuga nulla repellendus optio! Recusandae, quia earum molestiae. Aliquam explicabo ea amet harum cupiditate consectetur ipsum nesciunt.</p>
+		</div>
+		<div class="container">
+			<div class="h2 mb-3">Location</div>
+			<div class="mb-5" id="map"></div>
+		</div>
+
+		<script>
+		// Initialize and add the map
+		function initMap() {
+		// The location of Uluru
+		var uluru = {lat: 19.070976, lng: 72.9038848};
+		// The map, centered at Uluru
+		var map = new google.maps.Map(
+		document.getElementById('map'), {zoom: 15, center: uluru});
+		// The marker, positioned at Uluru
+		var marker = new google.maps.Marker({position: uluru, map: map});
+		}
+		</script>
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=xxx&callback=initMap">
+		</script>
+	</body>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

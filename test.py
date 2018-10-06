@@ -115,7 +115,9 @@ def add_database(data):
     # db.child('user_id').child('Profile_pic').set(data['profile_pic'])
     image_path = db.child(data['user_id']).child('Complaints').push({'lat': data['lat'],
                                                                      'long': data['long'],
-                                                                     'description': data['description']
+                                                                     'description': data['description'],
+                                                                     'status': 'none',
+                                                                     'reason': 'none',
                                                                      })
     img_data = requests.get(data['file_info']).content
     with open('image_name.jpg', 'wb') as handler:

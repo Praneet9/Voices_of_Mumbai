@@ -25,6 +25,8 @@ def index():
             data_dict['long'] = com_value['long']
             data_dict['description'] = com_value['description']
             data_dict['complaint_id'] = com_key
+            data_dict['status'] = com_value['status']
+            data_dict['reason'] = com_value['reason']
             # print(com_value['description'])
             path = 'photos/' + key + com_key + '.jpg'
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]

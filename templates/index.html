@@ -113,7 +113,7 @@
        <!-- About Section -->
     <div class="container space-2 space-3--lg">
     
- {% for d in data %}
+ {% for d in data if d['status'] == 'none' %}
  <div id="accordion">
   <div class="mb-3">
       <div class="row align-items-lg-center">

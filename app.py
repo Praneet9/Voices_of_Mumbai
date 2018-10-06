@@ -101,5 +101,13 @@ def del_complaint():
     return redirect('/')
 
 
+@app.route('/approve', methods=['POST'])
+def approve():
+    user_id = request.form.get('user_id')
+    complaint_id = request.form.get('complaint_id')
+    db.child(user_id).child("Complaints").child(complaint_id).child('status').set('true')
+    return redirect('/')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

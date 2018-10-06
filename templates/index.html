@@ -112,7 +112,7 @@
        <!-- About Section -->
     <div class="container space-2 space-3--lg">
 
- {% for d in data %}
+ {% for d in data if d['status'] == "none"  %}
  <div id="accordion">
   <div class="mb-3">
       <div class="row align-items-lg-center">
@@ -139,8 +139,12 @@
                 <p class="mb-0">9877667787</p>
               </div>
               <div class="media-body">
-                  <a class="btn btn-sm btn-success" href="#" onclick="">Approve</a>
-                  <a href="#" class="btn btn-sm btn-danger" data-toggle="collapse" data-target="#{{ d['complaint_id'] }}" aria-expanded="false" aria-controls="collapseOne">Reject</a>
+                  <form action="/approve" method="post">
+                      <button class="btn btn-sm btn-success" type="submit">Approve</button>
+                      <a href="#" class="btn btn-sm btn-danger" data-toggle="collapse" data-target="#{{ d['complaint_id'] }}" aria-expanded="false" aria-controls="collapseOne">Reject</a>
+                      <input name="user_id" value="{{ d['user_id'] }}" style = "visibility: hidden;"/>
+                      <input name="complaint_id" value="{{ d['complaint_id'] }}" style = "visibility: hidden;"/>
+                  </form>
               </div>
 
             </div>

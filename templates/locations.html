@@ -86,7 +86,7 @@
                         <p>The past years have been remarkable for web technologies.</p>
                         <div class="media">
                           <div class="media-body d-flex justify-content-end">
-                            <button id="findMyPlace"  class="btn btn-sm btn-secondary" value="{{ d['lat'] }} {{ d['long'] }}" onclick="myFn(this)">Find Place</button>
+                            <button id="findMyPlace"  class="btn btn-sm btn-secondary" value="{{ d['lat'] }} {{ d['long'] }}" onclick="change_coords({{ d['lat'] }}, {{ d['long'] }})">Find Place</button>
                           </div>
                         </div>
                       </div>
@@ -127,6 +127,8 @@
           <p class="small text-muted">All rights reserved. &copy; Anton. 2018 Trademark.</p>
         </div>
       </div>
+
+        <div id="mapcoords" data-lat="{{ data[0]['lat'] }}" data-lng="{{ data[0]['long'] }}" data-zoom="5"></div>
       
     </footer>
     <!-- ========== END FOOTER ========== -->
@@ -143,11 +145,22 @@
     </a>
     <!-- End Go to Top -->
     <script>
-    
+
+        function change_coords(lat, long) {
+            console.log(lat);
+            console.log(long)
+            document.getElementById('mapcoords').setAttribute("data-lat", lat);
+            document.getElementById('mapcoords').setAttribute("data-lng", long);
+            initMap()
+        }
+
     function initMap() {
        // The location of Uluru
     //    {% for d in data %}
-      var uluru = {lat: {{data[0]['lat']}} , lng: {{data[1]['long']}}}  ;
+      var uluru = {
+          lat: parseFloat(document.getElementById('mapcoords').getAttribute("data-lat")),
+          lng: parseFloat(document.getElementById('mapcoords').getAttribute("data-lng"))
+      }  ;
     // {% endfor %}
     // The map, centered at Uluru
     var map = new google.maps.Map(

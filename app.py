@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import json
 import pyrebase
 
@@ -47,6 +47,8 @@ def user():
             data_dict['lat'] = com_value['lat']
             data_dict['long'] = com_value['long']
             data_dict['description'] = com_value['description']
+            data_dict['status'] = com_value['status']
+            data_dict['reason'] = com_value['reason']
             path = 'photos/' + key + com_key + '.jpg'
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]
             data_list.append(data_dict.copy())
@@ -96,7 +98,7 @@ def del_complaint():
     complaint_id = request.form.get('complaint_id')
     db.child(user_id).child("Complaints").child(complaint_id).child('status').set('false')
     db.child(user_id).child("Complaints").child(complaint_id).child('reason').set(reason)
-    return "thankyou"
+    return redirect('/')
 
 
 if __name__ == '__main__':

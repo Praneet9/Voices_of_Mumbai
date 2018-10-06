@@ -3,7 +3,7 @@
   <!-- Mirrored from htmlstream.com/preview/space-v1.1/html/portfolio/single-page-simple.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Oct 2018 04:11:28 GMT -->
   <head>
     <!-- Title -->
-    <title>Portfolio - Simple Single Page | Space - Responsive Website Template</title>
+    <title></title>
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,13 +31,7 @@
     </style>
   </head>
   <body>
-    <!-- Skippy -->
-    <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
-      <div class="container">
-        <span class="u-skiplink-text">Skip to main content</span>
-      </div>
-    </a>
-    <!-- End Skippy -->
+    
     <!-- ========== HEADER ========== -->
     <header id="header" class="u-header u-header--modern u-header--bordered u-header--sticky-top-lg">
       <div class="u-header__section">
@@ -46,7 +40,7 @@
           <nav class="js-mega-menu navbar navbar-expand-lg u-header__navbar">
             <!-- Logo -->
             <div class="u-header__navbar-brand-wrapper">
-              <a class="navbar-brand u-header__navbar-brand" href="https://htmlstream.com/preview/space-v1.1/html/home/index.html" aria-label="Space">
+              <a class="navbar-brand u-header__navbar-brand" href="" aria-label="Space">
                 <!--  <img class="u-header__navbar-brand-default" src="https://htmlstream.com/preview/space-v1.1/assets/svg/logos/logo.svg" alt="Logo">
                 <img class="u-header__navbar-brand-mobile" src="https://htmlstream.com/preview/space-v1.1/assets/svg/logos/logo-short.svg" alt="Logo"> -->
                 Voices of Mumbai
@@ -62,10 +56,10 @@
     <!-- ========== MAIN CONTENT ========== -->
     <main id="content" role="main">
       <!-- Hero Section -->
-    <div class="container  space-3-top--lg">
-      <h1>Find your place</h1>
-    </div>
-    <!-- End Hero Section -->
+      <div class="container  space-3-top--lg">
+        <h1>Find your place</h1>
+      </div>
+      <!-- End Hero Section -->
       <!-- Description Section -->
       <div class="container space-1 space-3--md">
         <div class="row">
@@ -92,7 +86,7 @@
                         <p>The past years have been remarkable for web technologies.</p>
                         <div class="media">
                           <div class="media-body d-flex justify-content-end">
-                            <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                            <button id="findMyPlace"  class="btn btn-sm btn-secondary" value="{{ d['lat'] }} {{ d['long'] }}" onclick="myFn(this)">Find Place</button>
                           </div>
                         </div>
                       </div>
@@ -149,11 +143,11 @@
     </a>
     <!-- End Go to Top -->
     <script>
-    // Initialize and add the map
+    
     function initMap() {
-    // The location of Uluru
+       // The location of Uluru
     //    {% for d in data %}
-      var uluru = {lat: {{ data[0]['lat'] }}, lng: {{ data[0]['long'] }}};
+      var uluru = {lat: {{data[0]['lat']}} , lng: {{data[1]['long']}}}  ;
     // {% endfor %}
     // The map, centered at Uluru
     var map = new google.maps.Map(
@@ -161,11 +155,23 @@
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({position: uluru, map: map});
     }
-    </script>
-
-    <!-- Change map marker -->
     
-
+    </script>
+    <!-- Change map marker -->
+    <!-- 
+    <script>
+    
+    function myFn(context) {
+    console.log(typeof(context))
+    console.log("click = ", context.value );
+    // var findPlace = document.getElementById("findMyPlace").value;
+    var contextString = (context.value).toString();
+    contextString = contextString.replace(/^\s+|\s+$/gm,'');
+    console.log("contextString",contextString);
+    coords = contextString.split(" ");
+    console.log("gg", coords[0] , "gb" , coords[1]);
+    }
+    </script> -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDMHNYjCPVIg1lohNF4YQJg-qVBAoWPaM&callback=initMap">
     </script>

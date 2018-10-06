@@ -3,7 +3,7 @@
 
 <head>
   <!-- Title -->
-  <title>Blog - List Full Width | Space - Responsive Website Template</title>
+  <title></title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -42,7 +42,7 @@
             <a class="navbar-brand u-header__navbar-brand" href="#" aria-label="Space">
               <!-- <img class="u-header__navbar-brand-default" src="#" alt="Logo">
               <img class="u-header__navbar-brand-mobile" src="#" alt="Logo"> -->
-              VoiceOfMumbai
+              Voice of Mumbai
             </a>
           </div>
           <!-- End Logo -->
@@ -66,7 +66,7 @@
             <ul class="navbar-nav u-header__navbar-nav">
               <!-- Starter - Link -->
               <li class="nav-item u-header__nav-item">
-                <a class="nav-link u-header__nav-link" href="/user">
+                <a class="nav-link u-header__nav-link" href="#">
                   User
                 </a>
               </li>
@@ -103,7 +103,6 @@
     <!-- Hero Section -->
     <div class="container  space-3-top--lg">
       <h1>Complaints</h1>
-      <p class="lead">Our duty towards you is to share our experience we're reaching in our work path with you.</p>
     </div>
     <!-- End Hero Section -->
 
@@ -113,8 +112,7 @@
        <!-- About Section -->
     <div class="container space-2 space-3--lg">
 
- {% for d in data if d['status'] == 'none' %}
-
+ {% for d in data %}
  <div id="accordion">
   <div class="mb-3">
       <div class="row align-items-lg-center">

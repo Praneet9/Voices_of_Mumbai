@@ -23,10 +23,11 @@ def index():
             data_dict['lat'] = com_value['lat']
             data_dict['long'] = com_value['long']
             data_dict['description'] = com_value['description']
-            print(data['description'])
+            # print(com_value['description'])
             path = 'photos/' + key + com_key + '.jpg'
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]
-            data_list.append(data_dict)
+            # print(data_dict)
+            data_list.append(data_dict.copy())
     print(data_list)
         # for
         # print(key)
@@ -47,7 +48,7 @@ def user():
             data_dict['description'] = com_value['description']
             path = 'photos/' + key + com_key + '.jpg'
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]
-            data_list.append(data_dict)
+            data_list.append(data_dict.copy())
     return render_template('user.html', data = data_list)
 
 
@@ -64,7 +65,7 @@ def panel():
             data_dict['description'] = com_value['description']
             path = 'photos/' + key + com_key + '.jpg'
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]
-            data_list.append(data_dict)
+            data_list.append(data_dict.copy())
     print(data_list)
     return render_template('panel.html', data = data_list)
 
@@ -82,9 +83,10 @@ def locations():
             data_dict['description'] = com_value['description']
             path = 'photos/' + key + com_key + '.jpg'
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]
-            data_list.append(data_dict)
+            data_list.append(data_dict.copy())
     print(data_list)
     return render_template('locations.html', data = data_list)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

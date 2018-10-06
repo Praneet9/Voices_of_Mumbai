@@ -134,11 +134,11 @@
             <!-- Review -->
             <div class="media">
               <div class="media-body">
-                <h4 class="h6 mb-0">{{ d['Name']}}</h4>
+                <h4 class="h6 mb-0">{{ d['Name'] }}</h4>
                 <p class="mb-0">9877667787</p>
               </div>
               <div class="media-body">
-                  <a class="btn btn-sm btn-success" href="#">Approve</a>
+                  <a class="btn btn-sm btn-success" href="#" onclick="">Approve</a>
                   <a href="#" class="btn btn-sm btn-danger" data-toggle="collapse" data-target="#{{ d['description'] }}" aria-expanded="false" aria-controls="collapseOne">Reject</a>
               </div>
 
@@ -146,10 +146,12 @@
             
             <div id="{{ d['description'] }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">
-                <form>
+                <form action="/del_complaint" method="post">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Reason</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Reason For Rejecting">
+                    <input name="reason" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Reason For Rejecting">
+                      <input name="user_id" value="{{ d['user_id'] }}" style = "visibility: hidden;"/>
+                      <input name="complaint_id" value="{{ d['complaint_id'] }}" style = "visibility: hidden;"/>
                   </div>
                   <button type="submit" class="btn btn-sm btn-danger">Confirm Rejection</button>
                 </form>
@@ -163,7 +165,7 @@
 
         <div class="col-md-6 order-md-1">
           <div class="pr-lg-4">
-            <img class="img-fluid" src={{ d['image_url'] }} style="max-width: 516px; max-height: 516px; width: 100%; height: 100%" alt="Image Description">
+            <img class="img-fluid" src= {{ d['image_url'] }} style="max-width: 516px; max-height: 516px; width: 100%; height: 100%" alt="Image Description">
           </div>
         </div>
       </div>

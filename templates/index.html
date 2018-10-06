@@ -141,12 +141,12 @@
               </div>
               <div class="media-body">
                   <a class="btn btn-sm btn-success" href="#" onclick="">Approve</a>
-                  <a href="#" class="btn btn-sm btn-danger" data-toggle="collapse" data-target="#{{ d['description'] }}" aria-expanded="false" aria-controls="collapseOne">Reject</a>
+                  <a href="#" class="btn btn-sm btn-danger" data-toggle="collapse" data-target="#{{ d['complaint_id'] }}" aria-expanded="false" aria-controls="collapseOne">Reject</a>
               </div>
 
             </div>
             
-            <div id="{{ d['description'] }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="{{ d['complaint_id'] }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">
                 <form action="/del_complaint" method="post">
                   <div class="form-group">

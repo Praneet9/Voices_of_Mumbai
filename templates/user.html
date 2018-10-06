@@ -34,13 +34,15 @@
 		</nav>
 		<div class="container d-flex justify-content-center">
 			<a href="index.html" class="d-flex justify-content-center">
-				<div class="card w-75">
-					<img class="card-img-top" src="./img/img.png" alt="Card image cap">
+				{% for d in data %}
+				<div class="card">
+					<img class="card-img-top" src={{ d['image_url'] }} alt="Card image cap">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
+						<h5 class="card-title">{{ d['description'] }}</h5>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 					</div>
 				</div>
+				{% endfor %}}
 			</a>
 		</div>
 		<!-- Optional JavaScript -->

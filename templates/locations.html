@@ -35,134 +35,136 @@
 		<div class="container-fluid" >
 			<div class="row">
 				<div class="col-4" style="overflow-y: auto ;">
+					{% for d in data %}
 					<div class="card">
 						<div class="row d-flex align-items-center">
 							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
+								<img src={{ d['image_url'] }} class="w-100 ml-3">
 							</div>
 							<div class="col-8">
 								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
+									<h4 class="card-title">{{ d['description'] }}</h4>
 									<p>In Progress</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>Completed</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src="./img/img.png" class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
+					{% endfor %}
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>Completed</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="card">-->
+						<!--<div class="row d-flex align-items-center">-->
+							<!--<div class="col-4">-->
+								<!--<img src="./img/img.png" class="w-100 ml-3">-->
+							<!--</div>-->
+							<!--<div class="col-8">-->
+								<!--<div class="card-body">-->
+									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
+									<!--<p>In Progress</p>-->
+								<!--</div>-->
+							<!--</div>-->
 						</div>
 					</div>
 				</div>
@@ -176,7 +178,9 @@
 		// Initialize and add the map
 		function initMap() {
 		// The location of Uluru
-		var uluru = {lat: 19.070976, lng: 72.9038848};
+         //    {% for d in data %}
+		var uluru = {lat: {{ data[0]['lat'] }}, lng: {{ data[0]['long'] }}};
+            // {% endfor %}
 		// The map, centered at Uluru
 		var map = new google.maps.Map(
 		document.getElementById('map'), {zoom: 15, center: uluru});
@@ -185,7 +189,7 @@
 		}
 		</script>
 		<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=xxx&callback=initMap">
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDMHNYjCPVIg1lohNF4YQJg-qVBAoWPaM&callback=initMap">
 		</script>
 	</body>
 	<!-- Optional JavaScript -->

@@ -1,54 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" href="./css/index.css">
-		<title></title>
-		<style>
-		/* Set the size of the div element that contains the map */
-		#map {
-		height: 400px;  /* The height is 400 pixels */
-		width: 100%;  /* The width is the width of the web page */
-		}
-		</style>
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-			<div class="container">
-				<a class="navbar-brand" href="#">Anton</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					</form>
-				</div>
-			</div>
-		</nav>
-		<div class="container d-flex justify-content-center">
-			<a href="index.html" class="d-flex justify-content-center">
-				{% for d in data %}
-				<div class="card">
-					<img class="card-img-top" src={{ d['image_url'] }} alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">{{ d['description'] }}</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					</div>
-				</div>
-				{% endfor %}}
-			</a>
-		</div>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	</body>
+
+<head>
+  <!-- Title -->
+  <title>Blog - List Full Width | Space - Responsive Website Template</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://htmlstream.com/preview/space-v1.1/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="fonts.googleapis.com/css7dfd.css?family=Roboto:300,400,500" rel="stylesheet">
+
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/bootstrap/css/bootstrap.css">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.min.css">
+  <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/animate.css/animate.min.css">
+
+  <!-- CSS Space Template -->
+  <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/css/theme.css">
+</head>
+
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="u-header u-header--modern u-header--bordered u-header--sticky-top-lg">
+    <div class="u-header__section">
+      <div id="logoAndNav" class="container-fluid">
+        <!-- Nav -->
+        <nav class="js-mega-menu navbar navbar-expand-lg u-header__navbar">
+          <!-- Logo -->
+          <div class="u-header__navbar-brand-wrapper">
+            <a class="navbar-brand u-header__navbar-brand" href="#" aria-label="Space">
+              <img class="u-header__navbar-brand-default" src="#" alt="Logo">
+              <img class="u-header__navbar-brand-mobile" src="#" alt="Logo">
+            </a>
+          </div>
+          <!-- End Logo -->
+
+          <!-- Responsive Toggle Button -->
+          <button type="button" class="navbar-toggler btn u-hamburger u-header__hamburger"
+                  aria-label="Toggle navigation"
+                  aria-expanded="false"
+                  aria-controls="navBar"
+                  data-toggle="collapse"
+                  data-target="#navBar">
+            <span class="d-none d-sm-inline-block">Menu</span>
+            <span id="hamburgerTrigger" class="u-hamburger__box ml-3">
+              <span class="u-hamburger__inner"></span>
+            </span>
+          </button>
+          <!-- End Responsive Toggle Button -->
+
+          <!-- Navigation -->
+          <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse py-0">
+            <ul class="navbar-nav u-header__navbar-nav">
+              <!-- Starter - Link -->
+              <li class="nav-item u-header__nav-item">
+                <a class="nav-link u-header__nav-link" href="#">
+                  Starter
+                </a>
+              </li>
+              <!-- End Starter - Link -->
+
+              <!-- Button -->
+              <li class="nav-item u-header__nav-item-btn">
+                <a class="btn btn-sm btn-primary" href="#" role="button"
+                   data-modal-target="#signupModal"
+                   data-overlay-color="#151b26">
+                  <span class="fa fa-user-circle mr-1"></span>
+                 User
+                </a>
+              </li>
+              <!-- End Button -->
+            </ul>
+          </div>
+          <!-- End Navigation -->
+
+          <ul class="navbar-nav flex-row u-header__secondary-nav">
+           
+
+            
+          </ul>
+        </nav>
+        <!-- End Nav -->
+      </div>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
+   <main id="content" role="main">
+    <!-- Hero Section -->
+    <div class="container space-2 space-3-top--lg">
+      <h1>User Portal - All Complaints</h1>
+      <p class="lead">Our duty towards you is to share our experience we're reaching in our work path with you.</p>
+    </div>
+    <!-- End Hero Section -->
+<!-- News Blog Content -->
+    <div class="container space-3-bottom--lg">
+
+      <div class="card-mb card-sm-columns card-sm-2-count">
+        <!-- Blog Grid -->
+        {% for d in data %}
+        <article class="card mb-3">
+          <img class="card-img-top" src={{ d['image_url'] }} style="max-width: 550px; max-height: 300px; width: 100%; height: 100%" alt="Image Description">
+          <div class="card-body p-5">
+            <small class="d-block text-muted mb-2">April 3, 2018</small>
+            <h3 class="h5">
+              <a href="#">{{ d['description'] }}</a>
+            </h3>
+            <p>The past years have been remarkable for web technologies.</p>
+          </div>
+          <div class="card-footer bg-gray-100 py-4 px-5">
+            <div class="media">
+              <img class="u-sm-avatar rounded-circle mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/img/100x100/img1.jpg" alt="Image Description">
+              <div class="media-body">
+                <h4 class="d-inline-block mb-0">
+                  <a class="d-block font-size-13" href="single-article-classic.html">{{ d['Name']}}</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+        <!-- End Blog Grid -->
+</main>
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-dark">
+    <div class="container space-2">
+      <div class="row justify-content-md-center">
+          <p class="small text-muted">All rights reserved. &copy; Anton. 2018 Trademark.</p>
+        </div>
+      </div>
+    
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  
+
+  <!-- JS Global Compulsory -->
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.legacy.min.js"></script>
+
+  <!-- JS Space -->
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/hs.core.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.header.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.unfold.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.validation.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/helpers/hs.focus-state.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.modal-window.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.show-animation.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991,
+        hideTimeOut: 0
+      });
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          if (!$('body').hasClass('IE11')) {
+            $(this).find('input[type="search"]').focus();
+          }
+        }
+      });
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#password'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.helpers.HSFocusState.init();
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of autonomous popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-signup-modal', {
+        autonomous: true
+      });
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+
 </html>

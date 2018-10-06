@@ -1,201 +1,1038 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<title>Locations</title>
-		<style>
-		/* Set the size of the div element that contains the map */
-		#map {
-		height: 600px;  /* The height is 400 pixels */
-		width: 100%;  /* The width is the width of the web page */
-		}
-		</style>
-	</head>
-	<body style="overflow: hidden;">
-		
-		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-			<div class="container">
-				<a class="navbar-brand" href="#">Anton</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					</form>
-				</div>
-			</div>
-		</nav>
-		<div class="container-fluid" >
-			<div class="row">
-				<div class="col-4" style="overflow-y: auto ;">
-					{% for d in data %}
-					<div class="card">
-						<div class="row d-flex align-items-center">
-							<div class="col-4">
-								<img src={{ d['image_url'] }} class="w-100 ml-3">
-							</div>
-							<div class="col-8">
-								<div class="card-body">
-									<h4 class="card-title">{{ d['description'] }}</h4>
-									<p>In Progress</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					{% endfor %}
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>Completed</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-					<!--<div class="card">-->
-						<!--<div class="row d-flex align-items-center">-->
-							<!--<div class="col-4">-->
-								<!--<img src="./img/img.png" class="w-100 ml-3">-->
-							<!--</div>-->
-							<!--<div class="col-8">-->
-								<!--<div class="card-body">-->
-									<!--<h4 class="card-title">Lorem ipsum dolor sit amet</h4>-->
-									<!--<p>In Progress</p>-->
-								<!--</div>-->
-							<!--</div>-->
-						</div>
-					</div>
-				</div>
-				<div class="col-8 mh-100" >
-					<div id="map"></div>
-				</div>
-			</div>
-		</div>
-		
-		<script>
-		// Initialize and add the map
-		function initMap() {
-		// The location of Uluru
+  <!-- Mirrored from htmlstream.com/preview/space-v1.1/html/portfolio/single-page-simple.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Oct 2018 04:11:28 GMT -->
+  <head>
+    <!-- Title -->
+    <title>Portfolio - Simple Single Page | Space - Responsive Website Template</title>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://htmlstream.com/preview/space-v1.1/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="../../../../../fonts.googleapis.com/css7dfd.css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/bootstrap/css/bootstrap.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.min.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+    <!-- CSS Space Template -->
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/css/theme.css">
+  </head>
+  <body>
+    <!-- Skippy -->
+    <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
+      <div class="container">
+        <span class="u-skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+    <!-- End Skippy -->
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="u-header u-header--modern u-header--bordered u-header--sticky-top-lg">
+      <div class="u-header__section">
+        <div id="logoAndNav" class="container-fluid">
+          <!-- Nav -->
+          <nav class="js-mega-menu navbar navbar-expand-lg u-header__navbar">
+            <!-- Logo -->
+            <div class="u-header__navbar-brand-wrapper">
+              <a class="navbar-brand u-header__navbar-brand" href="https://htmlstream.com/preview/space-v1.1/html/home/index.html" aria-label="Space">
+                <!--  <img class="u-header__navbar-brand-default" src="https://htmlstream.com/preview/space-v1.1/assets/svg/logos/logo.svg" alt="Logo">
+                <img class="u-header__navbar-brand-mobile" src="https://htmlstream.com/preview/space-v1.1/assets/svg/logos/logo-short.svg" alt="Logo"> -->
+                Voices of Mumbai
+              </a>
+            </div>
+            <!-- End Logo -->
+          </nav>
+          <!-- End Nav -->
+        </div>
+      </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+      <!-- Description Section -->
+      <div class="container space-1 space-3--md">
+        <div class="row">
+          <div class="col-md-5 mb-7 mb-md-0">
+            <!-- Cubeportfolio -->
+            <div class="cbp"
+              data-layout="grid"
+              data-animation="quicksand"
+              data-x-gap="32"
+              data-y-gap="32"
+              data-media-queries='[
+              {"width": 300, "cols": 1}
+              ]'>
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <article class="card mb-3">
+                    <div class="card-body p-5">
+                      <small class="d-block text-muted mb-2">April 3, 2018</small>
+                      <h3 class="h5">
+                      <a href="#">Lorem ipsum dolor.</a>
+                      </h3>
+                      <p>The past years have been remarkable for web technologies.</p>
+                      <div class="media">
+                        <div class="media-body d-flex justify-content-end">
+                          <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <!-- End Item -->
+              <!-- Item -->
+              <div class="cbp-item">
+                <div class="cbp-caption">
+                  <div class="card-body p-5">
+                    <small class="d-block text-muted mb-2">April 3, 2018</small>
+                    <h3 class="h5">
+                    <a href="#">Lorem ipsum dolor.</a>
+                    </h3>
+                    <p>The past years have been remarkable for web technologies.</p>
+                    <div class="media">
+                      <div class="media-body d-flex justify-content-end">
+                        <a class="btn btn-sm btn-secondary" href="#">Find Place</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <!-- End Cubeportfolio -->
+        </div>
+        <div id="stickyBlockStartPoint" class="col-md-7">
+          <!-- Sticky Block -->
+          <div class="js-sticky-block pl-lg-4"
+            data-sticky-view="md"
+            data-start-point="#stickyBlockStartPoint"
+            data-end-point="#stickyBlockEndPoint"
+            data-offset-top="80"
+            data-offset-bottom="130">
+            <div class="mb-6">
+              <h1>Space mug</h1>
+              <p class="mb-0">Displaying this large amount of content in a smooth and seamless way was quite a challenge. By loading assets in the background, playing and stopping audio on the fly, parallaxing hotspots, and use of large images we succeeded in giving the user a smooth experience.</p>
+            </div>
+            <hr class="my-5">
+            <!-- List -->
+            <ul class="list-unstyled mb-0">
+              <li class="media mb-1">
+                <div class="min-width-35">
+                  <h2 class="h6">Client</h2>
+                </div>
+                <div class="media-body">
+                  <small class="text-muted">
+                  Htmlstream
+                  </small>
+                </div>
+              </li>
+              <li class="media mb-1">
+                <div class="min-width-35">
+                  <h4 class="h6">Designers</h4>
+                </div>
+                <div class="media-body">
+                  <small class="text-muted">
+                  Maria Muszynska,
+                  </small>
+                  <small class="text-muted">
+                  Jack Wayley
+                  </small>
+                </div>
+              </li>
+              <li class="media mb-1">
+                <div class="min-width-35">
+                  <h3 class="h6">Partners</h3>
+                </div>
+                <div class="media-body">
+                  <small class="text-muted">
+                  Pixeel
+                  </small>
+                </div>
+              </li>
+              <li class="media">
+                <div class="min-width-35">
+                  <h4 class="h6">Awards</h4>
+                </div>
+                <div class="media-body">
+                  <small class="d-block text-muted mb-1">
+                  FWA Site of the Day
+                  </small>
+                  <small class="d-block text-muted mb-1">
+                  Awwwards Site of the Day
+                  </small>
+                  <small class="d-block text-muted mb-1">
+                  CSSAwards Site of the Day
+                  </small>
+                  <small class="d-block text-muted">
+                  Bronze ADCN Lamp (Digital Craft)
+                  </small>
+                </div>
+              </li>
+            </ul>
+            <!-- End List -->
+            <hr class="my-5">
+            <div class="media">
+              <div class="min-width-35">
+                <h4 class="h6">Share</h4>
+              </div>
+              <div class="media-body">
+                <!-- Social Networks -->
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item">
+                    <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                      <span class="fab fa-facebook-f u-icon__inner"></span>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                      <span class="fab fa-google u-icon__inner"></span>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                      <span class="fab fa-twitter u-icon__inner"></span>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                      <span class="fab fa-github u-icon__inner"></span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- End Social Networks -->
+              </div>
+            </div>
+          </div>
+          <!-- End Sticky Block -->
+        </div>
+      </div>
+    </div>
+    <!-- End Description Section -->
+    <!-- Sticky Block End Point -->
+    <div id="stickyBlockEndPoint"></div>
+    <!-- Pagination -->
+    <div class="container space-2-bottom">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-between">
+          <li class="page-item col">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item col">
+            <a class="page-link" href="#">
+              <span class="fa fa-th"></span>
+            </a>
+          </li>
+          <li class="page-item col">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- End Pagination -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-dark">
+    <div class="container space-2">
+      <div class="row justify-content-md-between">
+        <div class="col-6 col-md-3 col-lg-2 order-lg-3 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">About</h3>
+          <!-- List Group -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/about-agency.html">About Agency</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/about-start-up.html">About Start-Up</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/services-agency.html">Services Agency</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/services-start-up.html">Services Start-Up</a>
+          </div>
+          <!-- End List Group -->
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 order-lg-4 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">Company</h3>
+          <!-- List Group -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/contacts-agency.html">Contact Us</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/help.html">Help</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/careers.html">Careers</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/terms.html">Terms &amp; Conditions</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/pages/privacy.html">Privacy &amp; Policy</a>
+          </div>
+          <!-- End List Group -->
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 order-lg-5 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">Shop</h3>
+          <!-- List Group -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/shop/classic.html">Classic</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/shop/single-product.html">Single Product</a>
+            <a class="list-group-item list-group-item-action" href="https://htmlstream.com/preview/space-v1.1/html/shop/checkout.html">Checkout</a>
+          </div>
+          <!-- End List Group -->
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 order-lg-6 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">Social</h3>
+          <!-- List -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="#">
+              <span class="fab fa-facebook-f min-width-3 text-center mr-2"></span>
+              Facebook
+            </a>
+            <a class="list-group-item list-group-item-action" href="#">
+              <span class="fab fa-twitter min-width-3 text-center mr-2"></span>
+              Twitter
+            </a>
+            <a class="list-group-item list-group-item-action" href="#">
+              <span class="fab fa-dribbble min-width-3 text-center mr-2"></span>
+              Dribbble
+            </a>
+            <a class="list-group-item list-group-item-action" href="#">
+              <span class="fab fa-github min-width-3 text-center mr-2"></span>
+              GitHub
+            </a>
+          </div>
+          <!-- End List -->
+        </div>
+        <div class="col-lg-4 order-lg-1 d-flex align-items-start flex-column">
+          <!-- Logo -->
+          <a class="d-inline-block mb-5" href="index.html" aria-label="Space">
+            <img src="https://htmlstream.com/preview/space-v1.1/assets/svg/logos/logo-short-white.svg" alt="Logo" style="width: 40px; max-width: 100%;">
+          </a>
+          <!-- End Logo -->
+          <!-- Language -->
+          <div class="btn-group d-block position-relative mb-4 mb-lg-auto">
+            <a id="footerLanguageInvoker" class="btn-text-secondary d-flex align-items-center u-unfold--language-btn rounded py-2 px-3" href="javascript:;" role="button"
+              aria-controls="footerLanguage"
+              aria-haspopup="true"
+              aria-expanded="false"
+              data-unfold-event="click"
+              data-unfold-target="#footerLanguage"
+              data-unfold-type="css-animation"
+              data-unfold-duration="300"
+              data-unfold-delay="300"
+              data-unfold-hide-on-scroll="false"
+              data-unfold-animation-in="slideInUp"
+              data-unfold-animation-out="fadeOut">
+              <span class="font-size-14">English</span>
+              <span class="fa fa-angle-down u-unfold__icon-pointer u-unfold--language-icon-pointer ml-4"></span>
+            </a>
+            <!-- Content -->
+            <div id="footerLanguage" class="u-unfold u-unfold--language bottom-0 left-0" aria-labelledby="footerLanguageInvoker">
+              <div class="py-6 px-5">
+                <h4 class="h6 mb-4">Select your language</h4>
+                <div class="row">
+                  <div class="col-6">
+                    <!-- List of Languages -->
+                    <div class="list-group list-group-borderless list-group-flush">
+                      <a class="active d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/us.svg" alt="United States Flag">
+                        English
+                      </a>
+                      <a class="d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/fr.svg" alt="France Flag">
+                        Français
+                      </a>
+                      <a class="d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/de.svg" alt="Germany Flag">
+                        Deutsch
+                      </a>
+                      <a class="d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/pt.svg" alt="Portugal Flag">
+                        Português
+                      </a>
+                    </div>
+                    <!-- End List of Languages -->
+                  </div>
+                  <div class="col-6">
+                    <!-- List of Languages -->
+                    <div class="list-group list-group-borderless list-group-flush">
+                      <a class="d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/es.svg" alt="Spain Flag">
+                        Español
+                      </a>
+                      <a class="d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/it.svg" alt="Italy Flag">
+                        Italiano
+                      </a>
+                      <a class="d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/ru.svg" alt="Russian Flag">
+                        Русский
+                      </a>
+                      <a class="d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        <img class="max-width-3 mr-2" src="https://htmlstream.com/preview/space-v1.1/assets/vendor/flag-icon-css/flags/4x3/tr.svg" alt="Turkey Flag">
+                        Türkçe
+                      </a>
+                    </div>
+                    <!-- End List of Languages -->
+                  </div>
+                </div>
+              </div>
+              <!-- Signup -->
+              <a class="u-unfold--language__link p-5" href="https://htmlstream.com/preview/space-v1.1/html/pages/signup-simple.html">
+                <small class="d-block text-muted mb-1">More languages coming soon.</small>
+                <small class="d-block">Signup to get notified <span class="fa fa-arrow-right u-unfold__icon-pointer"></span></small>
+              </a>
+              <!-- End Signup -->
+            </div>
+            <!-- End Content -->
+          </div>
+          <!-- End Language -->
+          <p class="small text-muted">All rights reserved. &copy; Space. 2018 Htmlstream.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Panel Sidebar Navigation -->
+  <aside id="sidebarContent" class="u-sidebar u-unfold--css-animation u-unfold--hidden" aria-labelledby="sidebarNavToggler">
+    <div class="u-sidebar__scroller">
+      <div class="u-sidebar__container">
+        <div class="u-sidebar--panel__footer-offset">
+          <!-- Toggle Button -->
+          <div class="d-flex align-items-center border-bottom py-4 px-5">
+            <h4 class="h5 mb-0">Account</h4>
+            <button type="button" class="close u-sidebar__close ml-auto"
+            aria-controls="sidebarContent"
+            aria-haspopup="true"
+            aria-expanded="false"
+            data-unfold-event="click"
+            data-unfold-hide-on-scroll="false"
+            data-unfold-target="#sidebarContent"
+            data-unfold-type="css-animation"
+            data-unfold-animation-in="fadeInRight"
+            data-unfold-animation-out="fadeOutRight"
+            data-unfold-duration="500">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- End Toggle Button -->
+          <!-- Content -->
+          <div class="js-scrollbar u-sidebar__body">
+            <div class="u-sidebar__content py-5">
+              <!-- Title -->
+              <div class="py-2 px-5">
+                <h4 class="text-uppercase text-muted font-size-13 mb-0">Menu label</h4>
+              </div>
+              <!-- End Title -->
+              <!-- List -->
+              <ul class="list-unstyled font-size-14 mb-5">
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/finance-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Dashboard</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/touch-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Activity</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/team-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Team</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/email-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Mailbox</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/projects-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Projects</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <!-- End List -->
+              <!-- Title -->
+              <div class="py-2 px-5">
+                <h4 class="text-uppercase text-muted font-size-13 mb-0">Sub level</h4>
+              </div>
+              <!-- End Title -->
+              <!-- List -->
+              <ul class="list-unstyled font-size-14 mb-0">
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/calendar-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Calendar</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/cog-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Tools</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                    <img class="max-width-4 mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/svg/components/archive-dark-icon.svg" alt="Image Description">
+                    <div class="media-body">
+                      <span>Archive</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <!-- End List -->
+            </div>
+          </div>
+          <!-- End Content -->
+        </div>
+        <!-- Footer -->
+        <footer class="u-sidebar__footer u-sidebar__footer--panel py-4 px-5">
+          <!-- List -->
+          <ul class="list-inline font-size-14 mb-0">
+            <li class="list-inline-item">
+              <a class="u-sidebar--panel__link pr-2" href="https://htmlstream.com/preview/space-v1.1/html/pages/privacy.html">Privacy</a>
+            </li>
+            <li class="list-inline-item">
+              <a class="u-sidebar--panel__link px-2" href="https://htmlstream.com/preview/space-v1.1/html/pages/terms.html">Terms</a>
+            </li>
+            <li class="list-inline-item">
+              <a class="u-sidebar--panel__link pl-2" href="https://htmlstream.com/preview/space-v1.1/html/pages/help.html">
+                <i class="fa fa-info-circle"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- End List -->
+        </footer>
+        <!-- End Footer -->
+      </div>
+    </div>
+  </aside>
+  <!-- End Panel Sidebar Navigation -->
+  <!-- Signup Modal Window -->
+  <div id="signupModal" class="js-signup-modal u-modal-window" style="width: 500px;">
+    <!-- Modal Close Button -->
+    <button class="btn btn-sm btn-icon btn-text-secondary u-modal-window__close" type="button" onclick="Custombox.modal.close();">
+    <span class="fas fa-times"></span>
+    </button>
+    <!-- End Modal Close Button -->
+    <!-- Content -->
+    <div class="p-5">
+      <form class="js-validate">
+        <!-- Signin -->
+        <div id="signin" data-target-group="idForm">
+          <!-- Title -->
+          <header class="text-center mb-5">
+            <h2 class="h4 mb-0">Please sign in</h2>
+            <p>Signin to manage your account.</p>
+          </header>
+          <!-- End Title -->
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-user form__text-inner"></span>
+                </span>
+              </div>
+              <input type="email" class="form-control form__input" name="email" required
+              placeholder="Email"
+              aria-label="Email"
+              data-msg="Please enter a valid email address."
+              data-error-class="u-has-error"
+              data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-lock form__text-inner"></span>
+                </span>
+              </div>
+              <input type="password" class="form-control form__input" name="password" required
+              placeholder="Password"
+              aria-label="Password"
+              data-msg="Your password is invalid. Please try again."
+              data-error-class="u-has-error"
+              data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+          <div class="row mb-3">
+            <div class="col-6">
+              <!-- Checkbox -->
+              <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox">
+                <label class="custom-control-label" for="rememberMeCheckbox">
+                  Remember Me
+                </label>
+              </div>
+              <!-- End Checkbox -->
+            </div>
+            <div class="col-6 text-right">
+              <a class="js-animation-link float-right" href="javascript:;"
+                data-target="#forgotPassword"
+                data-link-group="idForm"
+              data-animation-in="fadeIn">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-block btn-primary">Signin</button>
+          </div>
+          <div class="text-center mb-3">
+            <p class="text-muted">
+              Do not have an account?
+              <a class="js-animation-link" href="javascript:;"
+                data-target="#signup"
+                data-link-group="idForm"
+                data-animation-in="fadeIn">Signup
+              </a>
+            </p>
+          </div>
+          <!-- Divider -->
+          <div class="text-center u-divider-wrapper my-3">
+            <span class="u-divider u-divider--xs u-divider--text">OR</span>
+          </div>
+          <!-- End Divider -->
+          <!-- Signin Social Buttons -->
+          <div class="row mx-gutters-2 mb-4">
+            <div class="col-sm-6 mb-2 mb-sm-0">
+              <button type="button" class="btn btn-block btn-facebook">
+              <span class="fab fa-facebook-f mr-2"></span>
+              Signin with Facebook
+              </button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-block btn-twitter">
+              <span class="fab fa-twitter mr-2"></span>
+              Signin with Twitter
+              </button>
+            </div>
+          </div>
+          <!-- End Signin Social Buttons -->
+        </div>
+        <!-- End Signin -->
+        <!-- Signup -->
+        <div id="signup" style="display: none; opacity: 0;" data-target-group="idForm">
+          <!-- Title -->
+          <header class="text-center mb-5">
+            <h2 class="h4 mb-0">Please sign up</h2>
+            <p>Fill out the form to get started.</p>
+          </header>
+          <!-- End Title -->
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-user form__text-inner"></span>
+                </span>
+              </div>
+              <input type="email" class="form-control form__input" name="email" required
+              placeholder="Email"
+              aria-label="Email"
+              data-msg="Please enter a valid email address."
+              data-error-class="u-has-error"
+              data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-lock form__text-inner"></span>
+                </span>
+              </div>
+              <input type="password" class="form-control form__input" name="password" required
+              placeholder="Password"
+              aria-label="Password"
+              data-msg="Your password is invalid. Please try again."
+              data-error-class="u-has-error"
+              data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-key form__text-inner"></span>
+                </span>
+              </div>
+              <input type="password" class="form-control form__input" name="confirmPassword" required
+              placeholder="Confirm Password"
+              aria-label="Confirm Password"
+              data-msg="Password does not match the confirm password."
+              data-error-class="u-has-error"
+              data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+          <div class="mb-3">
+            <button type="submit" class="btn btn-block btn-primary">Signup</button>
+          </div>
+          <div class="text-center mb-3">
+            <p class="text-muted">
+              Have an account?
+              <a class="js-animation-link" href="javascript:;"
+                data-target="#signin"
+                data-link-group="idForm"
+                data-animation-in="fadeIn">Signin
+              </a>
+            </p>
+          </div>
+          <!-- Divider -->
+          <div class="text-center u-divider-wrapper my-3">
+            <span class="u-divider u-divider--xs u-divider--text">OR</span>
+          </div>
+          <!-- End Divider -->
+          <!-- Signup Social Buttons -->
+          <div class="row mx-gutters-2 mb-4">
+            <div class="col-sm-6 mb-2 mb-sm-0">
+              <button type="button" class="btn btn-block btn-facebook">
+              <span class="fab fa-facebook-f mr-2"></span>
+              Signup with Facebook
+              </button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-block btn-twitter">
+              <span class="fab fa-twitter mr-2"></span>
+              Signup with Twitter
+              </button>
+            </div>
+          </div>
+          <!-- End Signup Social Buttons -->
+        </div>
+        <!-- End Signup -->
+        <!-- Forgot Password -->
+        <div id="forgotPassword" style="display: none; opacity: 0;" data-target-group="idForm">
+          <!-- Title -->
+          <header class="text-center mb-5">
+            <h2 class="h4 mb-0">Recover account</h2>
+            <p>Enter your email address and an email with instructions will be sent to you.</p>
+          </header>
+          <!-- End Title -->
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-user form__text-inner"></span>
+                </span>
+              </div>
+              <input type="email" class="form-control form__input" name="email" required
+              placeholder="Email"
+              aria-label="Email"
+              data-msg="Please enter a valid email address."
+              data-error-class="u-has-error"
+              data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+          <div class="mb-3">
+            <button type="submit" class="btn btn-block btn-primary">Recover Account</button>
+          </div>
+          <div class="text-center mb-3">
+            <p class="text-muted">
+              Have an account?
+              <a class="js-animation-link" href="javascript:;"
+                data-target="#signin"
+                data-link-group="idForm"
+                data-animation-in="fadeIn">Signin
+              </a>
+            </p>
+          </div>
+        </div>
+        <!-- End Forgot Password -->
+      </form>
+    </div>
+    <!-- End Content -->
+  </div>
+  <!-- End Signup Modal Window -->
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="javascript:;"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fa fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+  <script>
+    // Initialize and add the map
+    function initMap() {
+    // The location of Uluru
          //    {% for d in data %}
-		var uluru = {lat: {{ data[0]['lat'] }}, lng: {{ data[0]['long'] }}};
+    var uluru = {lat: {{ data[0]['lat'] }}, lng: {{ data[0]['long'] }}};
             // {% endfor %}
-		// The map, centered at Uluru
-		var map = new google.maps.Map(
-		document.getElementById('map'), {zoom: 15, center: uluru});
-		// The marker, positioned at Uluru
-		var marker = new google.maps.Marker({position: uluru, map: map});
-		}
-		</script>
-		<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDMHNYjCPVIg1lohNF4YQJg-qVBAoWPaM&callback=initMap">
-		</script>
-	</body>
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 15, center: uluru});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDMHNYjCPVIg1lohNF4YQJg-qVBAoWPaM&callback=initMap">
+    </script>
+
+  <!-- JS Global Compulsory -->
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <!-- JS Implementing Plugins -->
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.legacy.min.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+  <!-- JS Space -->
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/hs.core.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.header.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.unfold.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.validation.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/helpers/hs.focus-state.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.modal-window.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.show-animation.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.cubeportfolio.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.sticky-block.js"></script>
+  <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.go-to.js"></script>
+  <!-- JS Plugins Init. -->
+  <script>
+  $(window).on('load', function () {
+  // initialization of HSMegaMenu component
+  $('.js-mega-menu').HSMegaMenu({
+  event: 'hover',
+  pageContainer: $('.container'),
+  breakpoint: 991,
+  hideTimeOut: 0
+  });
+  });
+  $(document).on('ready', function () {
+  // initialization of header
+  $.HSCore.components.HSHeader.init($('#header'));
+  // initialization of unfold component
+  $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+  afterOpen: function () {
+  if (!$('body').hasClass('IE11')) {
+  $(this).find('input[type="search"]').focus();
+  }
+  }
+  });
+  // initialization of form validation
+  $.HSCore.components.HSValidation.init('.js-validate', {
+  rules: {
+  confirmPassword: {
+  equalTo: '#password'
+  }
+  }
+  });
+  // initialization of forms
+  $.HSCore.helpers.HSFocusState.init();
+  // initialization of malihu scrollbar
+  $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+  // initialization of autonomous popups
+  $.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-signup-modal', {
+  autonomous: true
+  });
+  // initialization of show animations
+  $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+  // initialization of cubeportfolio
+  $.HSCore.components.HSCubeportfolio.init('.cbp');
+  // initialization of sticky blocks
+  setTimeout(function () {
+  $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
+  }, 300);
+  // initialization of go to
+  $.HSCore.components.HSGoTo.init('.js-go-to');
+  });
+  </script>
 </body>
+<!-- Mirrored from htmlstream.com/preview/space-v1.1/html/portfolio/single-page-simple.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Oct 2018 04:11:43 GMT -->
 </html>

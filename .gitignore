@@ -3,6 +3,8 @@
 **/config.json
 **/full_yolo_backend.h5
 **/training_result.h5
+**/training_set/*
+**/test_set/*
 # Created by https://www.gitignore.io/api/vim,macos,python,intellij,intellij+all,visualstudio,intellij+iml,visualstudiocode
 
 ### Intellij ###

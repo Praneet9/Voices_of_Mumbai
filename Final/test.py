@@ -80,17 +80,16 @@ def contact(bot, update):
 
     if pothole_coords != []:
         bot.send_message(chat_id=update.message.chat_id, text="Thank you! Your complaint has been recorded!")
+        predictions = predict_severity(str(update.message.chat_id), pothole_coords)
+        highest_severity = max(predictions)
+        avg_severity = sum(predictions)/len(predictions)
+
+        content['highest_severity'] = str(highest_severity)
+        content['avg_severity'] = str(avg_severity)
+        
+        add_database(content)
     else:
         bot.send_message(chat_id=update.message.chat_id, text="Sorry! No Potholes found, Please try again!")
-
-    predictions = predict_severity(str(update.message.chat_id), pothole_coords)
-    highest_severity = max(predictions)
-    avg_severity = sum(predictions)/len(predictions)
-
-    content['highest_severity'] = str(highest_severity)
-    content['avg_severity'] = str(avg_severity)
-    
-    add_database(content)
 
 # def url_to_img(url):
 #     response = requests.get(url)

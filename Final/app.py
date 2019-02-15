@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 import json
 import pyrebase
 
 app = Flask(__name__)
 
-with open('../api_key/config.json') as file:
+with open('api_key/config.json') as file:
     config = json.loads(file.read())
 
 firebase = pyrebase.initialize_app(config)
@@ -56,7 +56,6 @@ def user():
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]
             data_list.append(data_dict.copy())
     return render_template('user.html', data = data_list)
-
 
 # @app.route('/panel')
 # def panel():

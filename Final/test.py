@@ -7,31 +7,8 @@ import pyrebase
 import os
 import requests
 from potholes.predict import predict_potholes
+from pothole_classification.Classification import predict_severity
 import cv2
-
-# class Users:
-#     user_dict = {}
-#     def __init__(self, user_id):
-#         self.user_dict['user_id'] = user_id
-
-#     def add_name(self, name):
-#         self.user_dict['name'] = user_id
-    
-#     def add_latlng(self, latlng):
-#         self.user_dict['latlng'] = latlng
-    
-#     def add_file_info(self, file_info):
-#         self.user_dict['file_info'] = file_info
-
-#     def add_contact(self, phone_no):
-#         self.user_dict['contact'] = phone_no
-
-#     def add_description(self, desc):
-#         self.user_dict['desc'] = desc
-        
-#     def get_user_id(self):
-#         return self.user_dict['user_id']
-
 
 content = {}
 
@@ -106,8 +83,14 @@ def contact(bot, update):
     else:
         bot.send_message(chat_id=update.message.chat_id, text="Sorry! No Potholes found, Please try again!")
 
+    predictions = predict_severity(str(update.message.chat_id), pothole_coords)
+    highest_severity = max(predictions)
+    avg_severity = sum(predictions)/len(predictions)
 
-    # add database
+    content['highest_severity'] = str(highest_severity)
+    content['avg_severity'] = str(avg_severity)
+    
+    add_database(content)
 
 # def url_to_img(url):
 #     response = requests.get(url)
@@ -123,13 +106,14 @@ def add_database(data):
     db = firebase.database()
     storage = firebase.storage()
 
-    db.child(data['user_id']).child('Name').set(data['name'])
+    db.child('users/').child(data['user_id']).child('Name').set(data['name'])
     # db.child('user_id').child('Profile_pic').set(data['profile_pic'])
-    image_path = db.child(data['user_id']).child('Complaints').push({'lat': data['lat'],
+    image_path = db.child('users/').child(data['user_id']).child('Complaints').push({'lat': data['lat'],
                                                                      'long': data['long'],
-                                                                     'description': data['description'],
                                                                      'status': 'none',
                                                                      'reason': 'none',
+                                                                     'highest_severity': data['highest_severity'],
+                                                                     'avg_severity': data['avg_severity']
                                                                      })
     img_data = requests.get(data['file_info']).content
     with open('image_name.jpg', 'wb') as handler:

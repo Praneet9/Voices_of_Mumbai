@@ -2,6 +2,7 @@
 **/trained_wts.h5
 **/config.json
 **/full_yolo_backend.h5
+**/training_result.h5
 # Created by https://www.gitignore.io/api/vim,macos,python,intellij,intellij+all,visualstudio,intellij+iml,visualstudiocode
 
 ### Intellij ###

@@ -28,6 +28,8 @@ def index():
             data_dict['complaint_id'] = com_key
             data_dict['status'] = com_value['status']
             data_dict['reason'] = com_value['reason']
+            data_dict['highest_severity'] = com_value['highest_severity']
+            data_dict['avg_severity'] = com_value['avg_severity']
             # print(com_value['description'])
             path = 'photos/' + key + com_key + '.jpg'
             data_dict['image_url'] = storage.child(path).get_url(config).split("&token=")[0]
@@ -97,8 +99,8 @@ def del_complaint():
     reason = request.form.get('reason')
     user_id = request.form.get('user_id')
     complaint_id = request.form.get('complaint_id')
-    db.child(user_id).child("Complaints").child(complaint_id).child('status').set('false')
-    db.child(user_id).child("Complaints").child(complaint_id).child('reason').set(reason)
+    db.child('users/').child(user_id).child("Complaints").child(complaint_id).child('status').set('false')
+    db.child('users/').child(user_id).child("Complaints").child(complaint_id).child('reason').set(reason)
     return redirect('/')
 
 
@@ -106,7 +108,7 @@ def del_complaint():
 def approve():
     user_id = request.form.get('user_id')
     complaint_id = request.form.get('complaint_id')
-    db.child(user_id).child("Complaints").child(complaint_id).child('status').set('true')
+    db.child('users/').child(user_id).child("Complaints").child(complaint_id).child('status').set('true')
     return redirect('/')
 
 # New admin signup

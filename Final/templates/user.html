@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Title -->
+    <title>Blog - List Full Width | Space - Responsive Website Template</title>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://htmlstream.com/preview/space-v1.1/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="fonts.googleapis.com/css7dfd.css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/bootstrap/css/bootstrap.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.min.css">
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/vendor/animate.css/animate.min.css">
+    <!-- CSS Space Template -->
+    <link rel="stylesheet" href="https://htmlstream.com/preview/space-v1.1/assets/css/theme.css">
+  </head>
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="u-header u-header--modern u-header--bordered u-header--sticky-top-lg">
+      <div class="u-header__section">
+        <div id="logoAndNav" class="container-fluid">
+          <!-- Nav -->
+          <nav class="js-mega-menu navbar navbar-expand-lg u-header__navbar">
+            <!-- Logo -->
+            <div class="u-header__navbar-brand-wrapper">
+              <a class="navbar-brand u-header__navbar-brand" href="#" aria-label="Space">
+                <!--       <img class="u-header__navbar-brand-default" src="#" alt="Logo">
+                <img class="u-header__navbar-brand-mobile" src="#" alt="Logo"> -->
+                VoiceOfMumbai
+              </a>
+            </div>
+            <!-- End Logo -->
+            <!-- Responsive Toggle Button -->
+            <button type="button" class="navbar-toggler btn u-hamburger u-header__hamburger"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="navBar"
+            data-toggle="collapse"
+            data-target="#navBar">
+            <span class="d-none d-sm-inline-block">Menu</span>
+            <span id="hamburgerTrigger" class="u-hamburger__box ml-3">
+              <span class="u-hamburger__inner"></span>
+            </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Navigation -->
+            <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse py-0">
+              <ul class="navbar-nav u-header__navbar-nav">
+                <!-- Starter - Link -->
+                <li class="nav-item u-header__nav-item">
+                  <a class="nav-link u-header__nav-link" href="/locations">
+                    Map
+                  </a>
+                </li>
+                <!-- End Starter - Link -->
+                <!-- Button -->
+                <li class="nav-item u-header__nav-item-btn">
+                  <a class="btn btn-sm btn-primary" href="#" role="button"
+                    data-modal-target="#signupModal"
+                    data-overlay-color="#151b26">
+                    <span class="fa fa-user-circle mr-1"></span>
+                    User
+                  </a>
+                </li>
+                <!-- End Button -->
+              </ul>
+            </div>
+            <!-- End Navigation -->
+            <ul class="navbar-nav flex-row u-header__secondary-nav">
+              
+              
+            </ul>
+          </nav>
+          <!-- End Nav -->
+        </div>
+      </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <main id="content" role="main">
+      <!-- Hero Section -->
+      <div class="container space-2 space-3-top--lg">
+        <h1>User Portal - All Complaints</h1>
+      </div>
+      <!-- End Hero Section -->
+      <!-- News Blog Content -->
+      <div class="container space-3-bottom--lg">
+        <div class="card-mb card-sm-columns card-sm-2-count">
+          <!-- Blog Grid -->
+          {% for d in data %}
+            <div id="accordion">
+              <article class="card mb-3">
+                <img class="card-img-top" src={{ d['image_url'] }} style="background-image: center ;max-width: 550px; max-height: 300px; width: 100%; height: 100%" alt="Image Description">
+                <div class="card-body p-5">
+                  <small class="d-block text-muted mb-2">April 3, 2018</small>
+                  <h3 class="h5">
+                  <a href="#">{{ d['description'] }}</a>
+                  </h3>
+                    {% if d['status'] == "true" %}
+                  <p style="color: green">This complaint has been accepted and sent to the respected authorities.</p>
+                    {% elif d['status'] == "false" %}
+                    <p style="color: red">This complaint has been rejected because => {{ d['reason'] }}</p>
+                    {% else %}
+                    <p>This complaint is still under process.</p>
+                    {% endif %}
+                  <div class="media">
+                    <div class="media-body d-flex justify-content-between">
+                      <a href="#" class="btn btn-sm btn-secondary" data-toggle="collapse" data-target="#{{ d['description'] }}" aria-expanded="false" aria-controls="collapseOne">Comment</a>
+                      <a class="btn btn-sm btn-success" href="#">Upvote</a>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div id="{{ d['description'] }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <form>
+
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Reason</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Reason For Rejecting">
+                          </div>
+                          <button type="submit" class="btn btn-sm btn-danger">Confirm Rejection</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-gray-100 py-4 px-5">
+                  <div class="media">
+                    <img class="u-sm-avatar rounded-circle mr-3" src="https://htmlstream.com/preview/space-v1.1/assets/img/100x100/img1.jpg" alt="Image Description">
+                    <div class="media-body">
+                      <h4 class="d-inline-block mb-0">
+                      <a class="d-block font-size-13" href="single-article-classic.html">{{ d['Name']}}</a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+      <!-- End Blog Grid -->
+    </main>
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-dark">
+      <div class="container space-2">
+        <div class="row justify-content-md-center">
+          <p class="small text-muted">All rights reserved. &copy; Anton. 2018 Trademark.</p>
+        </div>
+      </div>
+      
+    </footer>
+    <!-- ========== END FOOTER ========== -->
+    
+    <!-- JS Global Compulsory -->
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.min.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/vendor/custombox/dist/custombox.legacy.min.js"></script>
+    <!-- JS Space -->
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/hs.core.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.header.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.unfold.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.validation.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/helpers/hs.focus-state.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.malihu-scrollbar.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.modal-window.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.show-animation.js"></script>
+    <script src="https://htmlstream.com/preview/space-v1.1/assets/js/components/hs.go-to.js"></script>
+    <!-- JS Plugins Init. -->
+    <script>
+    $(window).on('load', function () {
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+    event: 'hover',
+    pageContainer: $('.container'),
+    breakpoint: 991,
+    hideTimeOut: 0
+    });
+    });
+    $(document).on('ready', function () {
+    // initialization of header
+    $.HSCore.components.HSHeader.init($('#header'));
+    // initialization of unfold component
+    $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+    afterOpen: function () {
+    if (!$('body').hasClass('IE11')) {
+    $(this).find('input[type="search"]').focus();
+    }
+    }
+    });
+    // initialization of form validation
+    $.HSCore.components.HSValidation.init('.js-validate', {
+    rules: {
+    confirmPassword: {
+    equalTo: '#password'
+    }
+    }
+    });
+    // initialization of forms
+    $.HSCore.helpers.HSFocusState.init();
+    // initialization of malihu scrollbar
+    $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+    // initialization of autonomous popups
+    $.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-signup-modal', {
+    autonomous: true
+    });
+    // initialization of show animations
+    $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+    // initialization of go to
+    $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+    </script>
+  </body>
+</html>

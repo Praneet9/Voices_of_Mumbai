@@ -44,7 +44,7 @@ python test.py
 ```
 ## Testing the Project
 
-
+![](Final/tele.gif)
 
 ## Built With
 

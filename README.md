@@ -1,5 +1,5 @@
 # Voices of Mumbai
-Often time, we come across various problem on the streets of Mumbai, but we are clueless as to where to report the same. So, your task is to create a portal for the same, where citizens can report their problems, and others can view, vote and comment on the same, with respect to the status of the problem, whether it is resolved, ongoing, or gotten worse. Apart from that, users can mark locations as well on the map, where they encountered the problem.
+Often time, we come across various problem on the streets of Mumbai, but we are clueless as to where to report the same. So, this project is to create a portal for the same, where citizens can report their problems, and others can view, vote and comment on the same, with respect to the status of the problem, whether it is resolved, ongoing, or gotten worse. Apart from that, users can mark locations as well on the map, where they encountered the problem.
 
 ● Lodging problems and gauge their severity or distance
 ● Vote, comment and view problems according to severity or distance
@@ -10,8 +10,6 @@ Often time, we come across various problem on the streets of Mumbai, but we are 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
 
 * Python 3.5.2
 * [Telegram Bot](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-telegram?view=azure-bot-service-4.0)
@@ -53,8 +51,16 @@ python test.py
 ```
 ## Testing the Project
 
+#### NOTE
+##### For testing the project create your own bot from the [link](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-telegram?view=azure-bot-service-4.0) 
+##### And generate api keys (config.json) and add it to Final/api_key
+
+#### Telegram App 
 ![](Final/tele.gif)
 
+#### Website
+![Panel](Final/img1.jpg)
+![User](Final/img2.jpg)
 
 ## Built With
 

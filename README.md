@@ -68,4 +68,4 @@ python test.py
 * **Bhumit Adivarekar** - [AdivarekarBhumit](https://github.com/AdivarekarBhumit)
 * **Ganesh Pawar** - [gnasherx](https://github.com/gnasherx)
 * **Muteeullah** - [Muteeullah](https://github.com/Muteeullah)
-* **Vishal Gawde** - [Muteeullah](https://github.com/vrgawde)
+* **Vishal Gawde** - [vrgawde](https://github.com/vrgawde)

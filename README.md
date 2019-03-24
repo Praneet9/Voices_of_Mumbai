@@ -1,4 +1,4 @@
-# Voice_of_Mumbai
+# Voices of Mumbai
 Often time, we come across various problem on the streets of Mumbai, but we are clueless as to where to report the same. So, your task is to create a portal for the same, where citizens can report their problems, and others can view, vote and comment on the same, with respect to the status of the problem, whether it is resolved, ongoing, or gotten worse. Apart from that, users can mark locations as well on the map, where they encountered the problem.
 
 ● Lodging problems and gauge their severity or distance
@@ -44,7 +44,7 @@ python test.py
 ```
 ## Testing the Project
 
-![](Final/tele.gif)
+![](Final/GIF-2019-03-24-21-04-53.gif)
 
 ## Built With
 

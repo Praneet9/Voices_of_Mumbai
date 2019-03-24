@@ -21,14 +21,15 @@ What things you need to install the software and how to install them
 
 A step by step series of examples that tell you how to get a development environment up and running
 
-##### Install Python-Dependencies
-```
-pip3 install -r requirement.txt
-```
 ##### Create a local copy 
 ```
 git clone https://github.com/Praneet9/Voices_of_Mumbai.git
 ```
+##### Install Python-Dependencies
+```
+pip3 install -r requirement.txt
+```
+
 
 ## Running the Project
 * First run the SERVER 

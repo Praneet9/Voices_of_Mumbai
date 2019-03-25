@@ -103,7 +103,7 @@
                   <a href="#">{{ d['description'] }}</a>
                   </h3>
                     {% if d['status'] == "true" %}
-                  <p style="color: green">This complaint has been accepted and sent to the respected authorities.</p>
+                  <p style="color: green">This complaint has been resolved!</p>
                     {% elif d['status'] == "false" %}
                     <p style="color: red">This complaint has been rejected because => {{ d['reason'] }}</p>
                     {% else %}

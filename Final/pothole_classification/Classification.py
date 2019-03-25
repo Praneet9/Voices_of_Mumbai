@@ -5,7 +5,7 @@ from keras.preprocessing import image
 from keras.models import load_model
 from keras.preprocessing.image import *
 import tensorflow as tf
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import colorsys as cs
 

@@ -33,7 +33,7 @@ networkx==2.2
 numpy==1.16.1
 oauth2client==3.0.0
 opencv-contrib-python==4.0.0.21
-opencv-python==4.0.0.21
+opencv-python==4.1.1.26
 Pillow==5.4.1
 protobuf==3.7.0rc2
 pyasn1==0.4.5

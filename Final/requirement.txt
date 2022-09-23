@@ -35,7 +35,7 @@ oauth2client==3.0.0
 opencv-contrib-python==4.0.0.21
 opencv-python==4.0.0.21
 Pillow==5.4.1
-protobuf==3.7.0rc2
+protobuf==3.18.3
 pyasn1==0.4.5
 pyasn1-modules==0.2.4
 pycparser==2.19
